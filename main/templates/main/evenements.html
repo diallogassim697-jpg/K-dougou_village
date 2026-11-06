@@ -3,14 +3,8 @@
 {% block title %}Événements - Kédougou{% endblock %}
 
 {% block content %}
-    <section class="page-hero events-hero">
-        <div class="welcome-slide welcome-slide--gambia" aria-hidden="true"></div>
-        <div class="welcome-slide welcome-slide--bassari-1" aria-hidden="true"></div>
-        <div class="welcome-slide welcome-slide--bassari-2" aria-hidden="true"></div>
-        <div class="welcome-slide welcome-slide--bassari-3" aria-hidden="true"></div>
-        <div class="welcome-slide welcome-slide--navetane-1" aria-hidden="true"></div>
-        <div class="welcome-slide welcome-slide--navetane-2" aria-hidden="true"></div>
-        <div class="welcome-slide welcome-slide--navetane-3" aria-hidden="true"></div>
+    <section class="page-hero events-hero slideshow-hero">
+        {% include "main/_slideshow.html" %}
         <div class="page-heading">
             <p class="eyebrow">La vie du village · Kédougou</p>
             <h1>Les événements</h1>

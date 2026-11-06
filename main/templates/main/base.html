@@ -23,8 +23,12 @@
                 <span class="brand-name">Kédougou<span>Terre des hommes</span></span>
             </a>
             <nav class="site-nav" aria-label="Navigation principale">
-                <a href="{% url 'accueil' %}"{% if request.resolver_match.url_name == "accueil" %} aria-current="page"{% endif %}>Accueil</a>
+                <a href="{% url 'accueil' %}"{% if request.resolver_match.url_name == "accueil" or request.resolver_match.url_name == "detail_article" %} aria-current="page"{% endif %}>Accueil</a>
                 <a href="{% url 'liste_evenements' %}"{% if request.resolver_match.url_name == "liste_evenements" or request.resolver_match.url_name == "detail_evenement" %} aria-current="page"{% endif %}>Événements</a>
+                <a href="{% url 'histoire' %}"{% if request.resolver_match.url_name == "histoire" %} aria-current="page"{% endif %}>Histoire</a>
+                <a href="{% url 'galerie' %}"{% if request.resolver_match.url_name == "galerie" %} aria-current="page"{% endif %}>Galerie</a>
+                <a href="{% url 'informations_pratiques' %}"{% if request.resolver_match.url_name == "informations_pratiques" %} aria-current="page"{% endif %}>Infos pratiques</a>
+                <a href="{% url 'contact' %}"{% if request.resolver_match.url_name == "contact" %} aria-current="page"{% endif %}>Contact</a>
                 <a class="nav-admin" href="/admin/">Administration</a>
             </nav>
         </div>
@@ -38,6 +42,12 @@
         <div class="footer-inner">
             <a class="footer-brand" href="{% url 'accueil' %}">Kédougou, terre des hommes</a>
             <p>Actualités, culture et vie locale.</p>
+            <nav class="footer-nav" aria-label="Navigation de pied de page">
+                <a href="{% url 'histoire' %}">Histoire</a>
+                <a href="{% url 'galerie' %}">Galerie</a>
+                <a href="{% url 'informations_pratiques' %}">Infos pratiques</a>
+                <a href="{% url 'contact' %}">Contact</a>
+            </nav>
         </div>
     </footer>
 </body>

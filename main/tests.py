@@ -69,6 +69,9 @@ class ArticlePagesTests(TestCase):
         self.assertContains(response, self.article.titre)
         self.assertContains(response, self.article.contenu)
         self.assertContains(response, self.article.image)
+        self.assertContains(response, "slideshow-hero")
+        self.assertContains(response, "welcome-slide--gambia")
+        self.assertContains(response, "welcome-slide--navetane-3")
 
     def test_detail_page_returns_404_for_missing_article(self):
         response = self.client.get(
@@ -130,6 +133,9 @@ class EvenementPagesTests(TestCase):
         self.assertContains(response, self.evenement.titre)
         self.assertContains(response, self.evenement.description)
         self.assertContains(response, self.evenement.lieu)
+        self.assertContains(response, "slideshow-hero")
+        self.assertContains(response, "welcome-slide--gambia")
+        self.assertContains(response, "welcome-slide--navetane-3")
 
     def test_evenement_sans_date_affiche_date_a_confirmer(self):
         evenement = Evenement.objects.create(
@@ -219,3 +225,44 @@ class EvenementPagesTests(TestCase):
         )
 
         self.assertEqual(response.status_code, 404)
+
+
+class InformationalPagesTests(TestCase):
+    def test_nouvelles_pages_sont_accessibles_et_dans_la_navigation(self):
+        pages = (
+            ("histoire", "Histoire de Kédougou"),
+            ("galerie", "Galerie photos - Kédougou"),
+            ("informations_pratiques", "Informations pratiques - Kédougou"),
+            ("contact", "Contact - Kédougou"),
+        )
+
+        for nom_url, titre in pages:
+            with self.subTest(page=nom_url):
+                response = self.client.get(reverse(nom_url))
+
+                self.assertEqual(response.status_code, 200)
+                self.assertContains(response, f"<title>{titre}</title>", html=True)
+                self.assertContains(response, reverse("histoire"))
+                self.assertContains(response, reverse("galerie"))
+                self.assertContains(response, reverse("informations_pratiques"))
+                self.assertContains(response, reverse("contact"))
+                self.assertContains(response, "slideshow-hero")
+                self.assertContains(response, "welcome-slide--gambia")
+                self.assertContains(response, "welcome-slide--navetane-3")
+
+    def test_galerie_affiche_les_images_du_site(self):
+        response = self.client.get(reverse("galerie"))
+
+        self.assertContains(response, "FLEUVE_GAMBIE.jpg")
+        self.assertContains(response, "Cascade_dindefelo_2.jpg")
+        self.assertContains(response, "bassari1.jpg")
+        self.assertContains(response, "NAVETANE1.jpg")
+
+    def test_contact_affiche_l_adresse_electronique(self):
+        response = self.client.get(reverse("contact"))
+
+        self.assertContains(response, "diallogassim697@gmail.com")
+        self.assertContains(
+            response,
+            'href="mailto:diallogassim697@gmail.com"',
+        )

@@ -1,0 +1,27 @@
+{% extends "main/base.html" %}
+
+{% block title %}Histoire de Kédougou{% endblock %}
+
+{% block content %}
+    <section class="page-hero slideshow-hero">
+        {% include "main/_slideshow.html" %}
+        <div class="page-heading">
+            <p class="eyebrow">Mémoire · Culture · Transmission</p>
+            <h1>L’histoire de Kédougou</h1>
+            <p>Un territoire vivant, façonné par ses habitants, ses cultures et les récits transmis de génération en génération.</p>
+        </div>
+    </section>
+
+    <section class="content-shell">
+        <article class="story-panel">
+            <p class="eyebrow">Une histoire à raconter ensemble</p>
+            <h2>Les voix et les mémoires du territoire</h2>
+            <div class="content">
+                <p>Kédougou se situe au sud-est du Sénégal. Son identité se découvre à travers la diversité de ses communautés, ses langues, ses traditions et les liens que les habitants entretiennent avec leur territoire.</p>
+                <p>L’histoire locale se transmet aussi par les paroles, les pratiques culturelles, les rencontres et la mémoire des familles. Ces récits méritent d’être recueillis et partagés avec le respect de celles et ceux qui les portent.</p>
+                <p>Cette page a vocation à accueillir des témoignages et des repères historiques vérifiés. Les dates et les récits précis seront ajoutés à partir de sources et de contributions locales, afin de présenter cette histoire avec justesse.</p>
+            </div>
+            <a class="button" href="{% url 'galerie' %}">Découvrir la galerie</a>
+        </article>
+    </section>
+{% endblock %}

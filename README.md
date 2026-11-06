@@ -1,6 +1,10 @@
 # Kédougou, terre des hommes
 
-Site Django pour les actualités et les événements de Kédougou.
+Site Django consacré à Kédougou : actualités, événements, histoire, galerie
+photos, informations pratiques et contact.
+
+Les coordonnées de contact et les repères historiques détaillés restent à
+compléter avec des informations vérifiées et fournies localement.
 
 ## Installation locale (Windows / PowerShell)
 

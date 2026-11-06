@@ -1,0 +1,29 @@
+{% extends "main/base.html" %}
+
+{% block title %}Contact - Kédougou{% endblock %}
+
+{% block content %}
+    <section class="page-hero slideshow-hero">
+        {% include "main/_slideshow.html" %}
+        <div class="page-heading">
+            <p class="eyebrow">Une question · Une contribution</p>
+            <h1>Contact</h1>
+            <p>Vous souhaitez contribuer aux histoires, aux actualités ou aux événements de Kédougou&nbsp;?</p>
+        </div>
+    </section>
+
+    <section class="content-shell">
+        <article class="contact-panel">
+            <p class="eyebrow">Nous écrire</p>
+            <h2>Partagez vos informations</h2>
+            <p>Vous pouvez nous écrire à l’adresse suivante :
+                <a href="mailto:diallogassim697@gmail.com">diallogassim697@gmail.com</a>.
+            </p>
+            <p>En attendant, vous pouvez découvrir les actualités et les événements déjà publiés.</p>
+            <div class="hero-actions">
+                <a class="button" href="{% url 'accueil' %}">Lire les actualités</a>
+                <a class="button button--dark-outline" href="{% url 'liste_evenements' %}">Voir les événements</a>
+            </div>
+        </article>
+    </section>
+{% endblock %}

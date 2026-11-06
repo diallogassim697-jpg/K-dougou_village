@@ -1,0 +1,35 @@
+{% extends "main/base.html" %}
+{% load static %}
+
+{% block title %}Galerie photos - Kédougou{% endblock %}
+
+{% block content %}
+    <section class="page-hero slideshow-hero">
+        {% include "main/_slideshow.html" %}
+        <div class="page-heading">
+            <p class="eyebrow">Paysages · Culture · Vie locale</p>
+            <h1>La galerie de Kédougou</h1>
+            <p>Quelques images pour découvrir les paysages, les traditions et les moments de la vie locale.</p>
+        </div>
+    </section>
+
+    <section class="content-shell">
+        <div class="section-heading">
+            <div>
+                <p class="eyebrow">En images</p>
+                <h2>Un aperçu du territoire</h2>
+            </div>
+        </div>
+        <div class="photo-grid">
+            {% for photo in photos %}
+                <figure class="photo-card">
+                    <img src="{% get_media_prefix %}{{ photo.fichier }}" alt="{{ photo.titre }}" loading="lazy">
+                    <figcaption>
+                        <strong>{{ photo.titre }}</strong>
+                        <span>{{ photo.description }}</span>
+                    </figcaption>
+                </figure>
+            {% endfor %}
+        </div>
+    </section>
+{% endblock %}

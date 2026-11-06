@@ -1,6 +1,7 @@
 from pathlib import Path
 from tempfile import TemporaryDirectory
 
+from django.conf import settings
 from django.contrib.auth import get_user_model
 from django.contrib.staticfiles import finders
 from django.core.exceptions import ValidationError
@@ -266,3 +267,16 @@ class InformationalPagesTests(TestCase):
             response,
             'href="mailto:diallogassim697@gmail.com"',
         )
+
+
+class DeploymentFixtureTests(TestCase):
+    fixtures = ["initial_data.json"]
+
+    def test_fixture_contient_les_articles_evenements_et_images(self):
+        self.assertEqual(Article.objects.count(), 7)
+        self.assertEqual(Evenement.objects.count(), 3)
+        self.assertEqual(ImageEvenement.objects.count(), 9)
+        for image in ImageEvenement.objects.all():
+            image_path = Path(settings.MEDIA_ROOT) / image.image.name
+            with self.subTest(image=image.image.name):
+                self.assertTrue(image_path.is_file())

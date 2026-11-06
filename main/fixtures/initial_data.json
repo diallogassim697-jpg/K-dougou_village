@@ -1,0 +1,177 @@
+[
+{
+  "model": "main.article",
+  "pk": 1,
+  "fields": {
+    "titre": "À la découverte de Kédougou",
+    "contenu": "Bienvenue à Kédougou ! À travers ce site, découvrez les actualités, les événements et les richesses culturelles de notre ville. Revenez régulièrement pour suivre les nouvelles et les activités à venir.",
+    "image": "/media/evenements/bassari1.jpg",
+    "date_publication": "2026-11-06T12:36:49.956Z"
+  }
+},
+{
+  "model": "main.article",
+  "pk": 2,
+  "fields": {
+    "titre": "La richesse culturelle de Kédougou",
+    "contenu": "Kédougou est une région aux traditions et aux cultures variées. Les rencontres, les récits, la musique et les événements locaux sont autant d’occasions de découvrir ce patrimoine et de partager des moments conviviaux. Consultez la rubrique Événements pour suivre les prochaines activités annoncées.",
+    "image": "/media/evenements/bassari2.jpg",
+    "date_publication": "2026-11-06T12:37:57.596Z"
+  }
+},
+{
+  "model": "main.article",
+  "pk": 3,
+  "fields": {
+    "titre": "Le sport rassemble les habitants",
+    "contenu": "Les rencontres sportives sont des moments de partage et de convivialité pour les habitants de Kédougou. Elles permettent aux jeunes de se retrouver, de représenter leurs quartiers et de faire vivre l’esprit d’équipe. Retrouvez les prochaines dates dans la rubrique Événements.",
+    "image": "/media/evenements/NAVETANE1.jpg",
+    "date_publication": "2026-11-06T12:38:36.351Z"
+  }
+},
+{
+  "model": "main.article",
+  "pk": 4,
+  "fields": {
+    "titre": "Préserver la nature de notre région",
+    "contenu": "Les paysages de la région de Kédougou font partie de notre patrimoine commun. Chacun peut contribuer à les préserver : gardons les lieux propres, respectons la nature et sensibilisons notre entourage. Ensemble, protégeons la beauté de notre région pour les générations futures.",
+    "image": "/media/evenements/bassari3.jpg",
+    "date_publication": "2026-11-06T12:39:26.160Z"
+  }
+},
+{
+  "model": "main.article",
+  "pk": 5,
+  "fields": {
+    "titre": "Soutenir les initiatives des jeunes",
+    "contenu": "Les jeunes participent activement à la vie de Kédougou à travers le sport, la culture et les initiatives locales. Encourageons leurs idées et leurs projets en prenant part aux activités du village et en partageant les informations autour de nous. Les annonces des prochains événements sont publiées sur ce site.",
+    "image": "/media/evenements/NAVETANE2.jpg",
+    "date_publication": "2026-11-06T12:40:13.851Z"
+  }
+},
+{
+  "model": "main.article",
+  "pk": 6,
+  "fields": {
+    "titre": "La cascade de Dindéfélo, un trésor naturel",
+    "contenu": "À proximité de Kédougou, la cascade de Dindéfélo offre un magnifique cadre naturel, entouré de végétation. C’est un lieu apprécié pour découvrir les paysages de la région et profiter de la fraîcheur de l’eau. Aidons à préserver ce site : respectons les lieux et remportons nos déchets.",
+    "image": "/media/evenements/Cascade_dindefelo_2.jpg",
+    "date_publication": "2026-11-06T12:54:14.955Z"
+  }
+},
+{
+  "model": "main.article",
+  "pk": 7,
+  "fields": {
+    "titre": "Le fleuve Gambie, au cœur de notre région",
+    "contenu": "Le fleuve Gambie traverse les paysages de la région de Kédougou et contribue à la richesse de son environnement. Ses rives et la végétation qui l’entoure font partie d’un patrimoine naturel précieux. Découvrons ce lieu en le respectant et en contribuant à garder ses abords propres.",
+    "image": "/media/evenements/FLEUVE_GAMBIE.jpg",
+    "date_publication": "2026-11-06T12:54:57.481Z"
+  }
+},
+{
+  "model": "main.evenement",
+  "pk": 1,
+  "fields": {
+    "titre": "Culture Bassari",
+    "description": "Découvrez la richesse de la culture bassari à travers ses traditions, ses chants, ses danses et ses savoir-faire. Un moment de partage pour célébrer le patrimoine vivant de la région de Kédougou et le transmettre aux générations futures.",
+    "date_heure": "2026-12-24T18:00:00Z",
+    "lieu": "Kédougou",
+    "date_creation": "2026-11-04T11:39:50.461Z"
+  }
+},
+{
+  "model": "main.evenement",
+  "pk": 2,
+  "fields": {
+    "titre": "Navétanes de Kédougou",
+    "description": "Les Navétanes de Kédougou sont une compétition sportive qui rassemble les équipes et les habitants autour du football, du fair-play et de la convivialité. La compétition dure un mois et anime la vie des quartiers. Les dates et le programme sont à confirmer auprès des organisateurs.",
+    "date_heure": null,
+    "lieu": "Kédougou",
+    "date_creation": "2026-11-04T11:39:50.462Z"
+  }
+},
+{
+  "model": "main.evenement",
+  "pk": 3,
+  "fields": {
+    "titre": "VISITE DE KEDOUGOU",
+    "description": "Partez à la découverte de Kédougou et de ses paysages avec un guide local. Explorez la région, découvrez son patrimoine naturel et culturel et partagez un moment convivial. Départ suggéré à 8 h. Date, durée et tarifs à confirmer auprès de l’organisateur. Prière de se renseigner sur les disponibilités avant la visite.",
+    "date_heure": "2026-12-31T08:00:00Z",
+    "lieu": "Kédougou",
+    "date_creation": "2026-11-06T12:30:04.309Z"
+  }
+},
+{
+  "model": "main.imageevenement",
+  "pk": 1,
+  "fields": {
+    "evenement": 1,
+    "image": "evenements/bassari1.jpg"
+  }
+},
+{
+  "model": "main.imageevenement",
+  "pk": 2,
+  "fields": {
+    "evenement": 1,
+    "image": "evenements/bassari2.jpg"
+  }
+},
+{
+  "model": "main.imageevenement",
+  "pk": 3,
+  "fields": {
+    "evenement": 1,
+    "image": "evenements/bassari3.jpg"
+  }
+},
+{
+  "model": "main.imageevenement",
+  "pk": 4,
+  "fields": {
+    "evenement": 2,
+    "image": "evenements/NAVETANE1.jpg"
+  }
+},
+{
+  "model": "main.imageevenement",
+  "pk": 5,
+  "fields": {
+    "evenement": 2,
+    "image": "evenements/NAVETANE2.jpg"
+  }
+},
+{
+  "model": "main.imageevenement",
+  "pk": 6,
+  "fields": {
+    "evenement": 2,
+    "image": "evenements/NAVETANE3.jpg"
+  }
+},
+{
+  "model": "main.imageevenement",
+  "pk": 7,
+  "fields": {
+    "evenement": 3,
+    "image": "evenements/Kedougou_Region_Senegal.jpg"
+  }
+},
+{
+  "model": "main.imageevenement",
+  "pk": 8,
+  "fields": {
+    "evenement": 3,
+    "image": "evenements/Cascade_dindefelo_2.jpg"
+  }
+},
+{
+  "model": "main.imageevenement",
+  "pk": 9,
+  "fields": {
+    "evenement": 3,
+    "image": "evenements/FLEUVE_GAMBIE.jpg"
+  }
+}
+]

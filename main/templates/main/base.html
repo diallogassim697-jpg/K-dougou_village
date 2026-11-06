@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#183c32">
+    <meta name="description" content="Actualités, événements et découvertes à Kédougou.">
+    <title>{% block title %}Kédougou, terre des hommes{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'main/site.css' %}">
+</head>
+<body>
+    <div class="topbar">
+        <div class="topbar-inner">
+            <span>LE JOURNAL DE KÉDOUGOU</span>
+            <span>Culture <i aria-hidden="true">·</i> Nature <i aria-hidden="true">·</i> Vie locale</span>
+        </div>
+    </div>
+    <header class="site-header">
+        <div class="nav-shell">
+            <a class="brand" href="{% url 'accueil' %}" aria-label="Accueil - Kédougou">
+                <span class="brand-mark" aria-hidden="true">K</span>
+                <span class="brand-name">Kédougou<span>Terre des hommes</span></span>
+            </a>
+            <nav class="site-nav" aria-label="Navigation principale">
+                <a href="{% url 'accueil' %}"{% if request.resolver_match.url_name == "accueil" %} aria-current="page"{% endif %}>Accueil</a>
+                <a href="{% url 'liste_evenements' %}"{% if request.resolver_match.url_name == "liste_evenements" or request.resolver_match.url_name == "detail_evenement" %} aria-current="page"{% endif %}>Événements</a>
+                <a class="nav-admin" href="/admin/">Administration</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <a class="footer-brand" href="{% url 'accueil' %}">Kédougou, terre des hommes</a>
+            <p>Actualités, culture et vie locale.</p>
+        </div>
+    </footer>
+</body>
+</html>

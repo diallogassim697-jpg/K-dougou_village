@@ -1,0 +1,68 @@
+{% extends "main/base.html" %}
+
+{% block title %}Événements - Kédougou{% endblock %}
+
+{% block content %}
+    <section class="page-hero events-hero">
+        <div class="welcome-slide welcome-slide--gambia" aria-hidden="true"></div>
+        <div class="welcome-slide welcome-slide--bassari-1" aria-hidden="true"></div>
+        <div class="welcome-slide welcome-slide--bassari-2" aria-hidden="true"></div>
+        <div class="welcome-slide welcome-slide--bassari-3" aria-hidden="true"></div>
+        <div class="welcome-slide welcome-slide--navetane-1" aria-hidden="true"></div>
+        <div class="welcome-slide welcome-slide--navetane-2" aria-hidden="true"></div>
+        <div class="welcome-slide welcome-slide--navetane-3" aria-hidden="true"></div>
+        <div class="page-heading">
+            <p class="eyebrow">La vie du village · Kédougou</p>
+            <h1>Les événements</h1>
+            <p>Retrouvez les rendez-vous, les rencontres et les moments à partager à Kédougou.</p>
+            <div class="hero-actions">
+                <a class="button" href="#agenda">Voir le programme</a>
+                <a class="button button--outline" href="{% url 'accueil' %}">Retour à l’accueil</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="content-shell" id="agenda">
+        <div class="section-heading">
+            <div>
+                <p class="eyebrow">À ne pas manquer</p>
+                <h2>Les prochains rendez-vous</h2>
+            </div>
+        </div>
+        <div class="event-list">
+            {% for evenement in evenements %}
+                <article class="event-card">
+                    <div class="event-card-body">
+                        <h2><a href="{% url 'detail_evenement' evenement.id %}">{{ evenement.titre }}</a></h2>
+                        <div class="event-meta">
+                            <span>
+                                {% if evenement.date_heure %}
+                                    {{ evenement.date_heure|date:"d/m/Y à H:i" }}
+                                {% else %}
+                                    Date à confirmer
+                                {% endif %}
+                            </span>
+                            <span>Lieu : {{ evenement.lieu }}</span>
+                        </div>
+                        <p>{{ evenement.description|truncatewords:30 }}</p>
+                        <a class="text-link" href="{% url 'detail_evenement' evenement.id %}">En savoir plus&nbsp;→</a>
+                    </div>
+                    {% if evenement.images.all %}
+                        <div class="event-gallery">
+                            {% for image in evenement.images.all %}
+                                <a href="{% url 'detail_evenement' evenement.id %}">
+                                    <img src="{{ image.image.url }}" alt="{{ evenement.titre }}" class="event-image">
+                                </a>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                </article>
+            {% empty %}
+                <div class="empty-state">
+                    <strong>Aucun événement annoncé pour le moment</strong>
+                    <p>Revenez bientôt pour découvrir les prochains rendez-vous du village.</p>
+                </div>
+            {% endfor %}
+        </div>
+    </section>
+{% endblock %}

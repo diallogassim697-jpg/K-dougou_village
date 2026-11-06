@@ -1,0 +1,31 @@
+{% extends "main/base.html" %}
+
+{% block title %}{{ evenement.titre }} - Événements à Kédougou{% endblock %}
+
+{% block content %}
+    <section class="content-shell">
+        <a class="back-link" href="{% url 'liste_evenements' %}">← Retour aux événements</a>
+        <article class="event-container">
+            <p class="eyebrow">Agenda du village</p>
+            <h1>{{ evenement.titre }}</h1>
+            <div class="detail-meta">
+                <span>
+                    {% if evenement.date_heure %}
+                        {{ evenement.date_heure|date:"d/m/Y à H:i" }}
+                    {% else %}
+                        Date à confirmer
+                    {% endif %}
+                </span>
+                <span>Lieu : {{ evenement.lieu }}</span>
+            </div>
+            {% if evenement.images.all %}
+                <div class="event-gallery">
+                    {% for image in evenement.images.all %}
+                        <img src="{{ image.image.url }}" alt="{{ evenement.titre }}" class="event-image">
+                    {% endfor %}
+                </div>
+            {% endif %}
+            <div class="event-description">{{ evenement.description|linebreaks }}</div>
+        </article>
+    </section>
+{% endblock %}

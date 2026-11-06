@@ -1,0 +1,20 @@
+{% extends "main/base.html" %}
+
+{% block title %}{{ article.titre }} - Kédougou{% endblock %}
+
+{% block content %}
+    <section class="content-shell">
+        <a class="back-link" href="{% url 'accueil' %}">← Retour aux actualités</a>
+        <article class="article-container">
+            <p class="eyebrow">Actualités du village</p>
+            <h1>{{ article.titre }}</h1>
+            <div class="detail-meta">
+                <span>Publié le {{ article.date_publication|date:"d/m/Y à H:i" }}</span>
+            </div>
+            {% if article.image %}
+                <img src="{{ article.image }}" alt="{{ article.titre }}" class="img-detail">
+            {% endif %}
+            <div class="content">{{ article.contenu|linebreaks }}</div>
+        </article>
+    </section>
+{% endblock %}
